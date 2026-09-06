@@ -1,0 +1,6 @@
+geopandas
+shapely
+scikit-learn
+requests
+pandas
+numpy
