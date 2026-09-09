@@ -44,7 +44,9 @@ from datetime import datetime, timedelta, timezone
 
 import numpy as np
 import pandas as pd
-from sklearn.cluster import DBSCAN
+
+from sklearn.cluster import AgglomerativeClustering
+from sklearn.metrics.pairwise import haversine_distances
 
 # --------------------------------------------------------------------------
 # Config
@@ -202,25 +204,46 @@ def cluster_into_anomalies(
     """
     Group individual FIRMS detections that represent the *same* real-world
     thermal source (repeat satellite passes over the same refinery, flare,
-    or fire) into a single anomaly cluster, using DBSCAN with haversine
-    distance. Detections more than `eps_km` apart are treated as distinct
-    sources.
-    """
-    coords = _haversine_radians(df[["latitude", "longitude"]].to_numpy())
-    eps_rad = eps_km / EARTH_RADIUS_KM
+    or fire) into a single anomaly cluster. Detections more than `eps_km`
+    apart are treated as distinct sources.
 
-    db = DBSCAN(eps=eps_rad, min_samples=min_samples, metric="haversine")
-    labels = db.fit_predict(coords)
+    BUGFIX: this used to run DBSCAN(eps=eps_km, min_samples=1). With
+    min_samples=1 every point is a core point, so DBSCAN's "density-reachable"
+    rule lets clusters chain: A-B 0.9km, B-C 0.9km -> A and C end up in the
+    same cluster even though A-C is 1.8km apart (more than eps_km). Over a
+    30-day window of detections this silently merges unrelated sources into
+    one another (e.g. a scattered wildfire line into a "persistent" source),
+    which both corrupts persistence_score/detections_30d and *reduces* the
+    number of distinct anomalies a downstream classifier ever sees for
+    sparse categories.
+
+    Fixed by switching to complete-linkage agglomerative clustering on a
+    # precomputed haversine distance matrix: complete linkage guarantees the
+    # *maximum* pairwise distance inside any cluster stays <= eps_km, which
+    # matches the "distinct sources beyond eps_km" contract in the docstring.
+    # min_samples is unused here (kept as a no-op arg) since single-linkage
+    # chaining was the actual bug, not a density threshold.
+    """
+    n = len(df)
+    coords_rad = _haversine_radians(df[["latitude", "longitude"]].to_numpy())
+
+    if n <= 1:
+        df = df.copy()
+        df["cluster_id"] = np.arange(n)
+        return df
+
+    dist_km = haversine_distances(coords_rad) * EARTH_RADIUS_KM
+
+    clustering = AgglomerativeClustering(
+        n_clusters=None,
+        metric="precomputed",
+        linkage="complete",
+        distance_threshold=eps_km,
+    )
+    labels = clustering.fit_predict(dist_km)
 
     df = df.copy()
     df["cluster_id"] = labels
-    # DBSCAN noise (-1) means a singleton detection with no neighbors within
-    # eps_km — still a valid, standalone anomaly, just give each its own id.
-    noise_mask = df["cluster_id"] == -1
-    max_label = df["cluster_id"].max()
-    new_ids = np.arange(max_label + 1, max_label + 1 + noise_mask.sum())
-    df.loc[noise_mask, "cluster_id"] = new_ids
-
     return df
 
 
@@ -345,7 +368,12 @@ def validate_schema(df: pd.DataFrame) -> None:
 def main():
     parser = argparse.ArgumentParser(description="AgniLens Person 1: FIRMS data pipeline")
     parser.add_argument("--input", type=str, help="Path to a raw FIRMS CSV already on disk")
-    parser.add_argument("--api-key", type=str, help="NASA FIRMS MAP_KEY for live API pull")
+    parser.add_argument("--api-key", type=str,
+                         default=os.environ.get("NASA_FIRMS_MAP_KEY"),
+                         help="NASA FIRMS MAP_KEY for live API pull. Reads from "
+                              "the NASA_FIRMS_MAP_KEY environment variable if not "
+                              "passed explicitly — preferred, keeps the key out of "
+                              "shell history and off-screen during screen shares.")
     parser.add_argument("--area", type=str, default="68,6,98,38",
                          help="west,south,east,north bounding box (default: India)")
     parser.add_argument("--source", type=str, default="VIIRS_SNPP_NRT",

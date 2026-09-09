@@ -26,6 +26,7 @@ from sklearn.neighbors import BallTree
 
 from config import (
     OUTPUT_SCHEMA_COLUMNS,
+    INCLUDE_POPULATION_PROXIMITY,
     DIST_VERY_CLOSE_M,
     DIST_NEARBY_M,
     POP_HIGH_PROXIMITY_M,
@@ -168,7 +169,6 @@ def compute_features(firms_df: pd.DataFrame,
     facility_type, facility_name, distance_m = nearest_facility(firms_df, facilities_gdf)
     forest_km = nearest_forest_km(firms_df, landuse_gdf)
     land_cover = land_cover_at_point(firms_df, landuse_gdf)
-    pop_proximity = population_proximity(firms_df, population_df)
 
     out = pd.DataFrame({
         "anomaly_id": firms_df["anomaly_id"].values,
@@ -179,7 +179,14 @@ def compute_features(firms_df: pd.DataFrame,
         "distance_m": np.round(distance_m, 1),
         "land_cover": land_cover,
         "nearest_forest_km": np.round(forest_km, 2),
-        "population_proximity": pop_proximity,
     })
+
+    # Only compute + attach population_proximity if a real data source is
+    # wired in (config.INCLUDE_POPULATION_PROXIMITY). Currently False by
+    # team decision — see config.py comment. Shipping a constant "unknown"
+    # column wastes a BallTree build for zero signal, so skip it entirely
+    # rather than compute-then-drop.
+    if INCLUDE_POPULATION_PROXIMITY:
+        out["population_proximity"] = population_proximity(firms_df, population_df)
 
     return out[OUTPUT_SCHEMA_COLUMNS]

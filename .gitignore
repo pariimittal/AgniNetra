@@ -22,3 +22,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Secrets — never commit
+.env
+*.env
+NASA_FIRMS_MAP_KEY*
+
+# Generated data — regenerate locally, don't ship in the repo
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

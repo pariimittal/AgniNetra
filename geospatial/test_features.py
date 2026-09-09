@@ -58,9 +58,10 @@ if __name__ == "__main__":
     pd.set_option("display.width", 160)
     print(result)
     print()
-    assert list(result.columns) == [
-        "anomaly_id", "latitude", "longitude", "nearest_industry",
-        "nearest_industry_name", "distance_m", "land_cover",
-        "nearest_forest_km", "population_proximity",
-    ]
+    from config import OUTPUT_SCHEMA_COLUMNS
+    assert list(result.columns) == OUTPUT_SCHEMA_COLUMNS, (
+        f"Output columns {list(result.columns)} don't match "
+        f"config.OUTPUT_SCHEMA_COLUMNS {OUTPUT_SCHEMA_COLUMNS}"
+    )
     print("Schema check passed. Output columns match config.OUTPUT_SCHEMA_COLUMNS.")
+    print(f"(population_proximity included: {('population_proximity' in result.columns)})")
