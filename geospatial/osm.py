@@ -29,6 +29,8 @@ OVERPASS_URL = "https://overpass-api.de/api/interpreter"
 OVERPASS_MIRRORS = [
     "https://overpass-api.de/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.osm.ch/api/interpreter",
+    "https://overpass.openstreetmap.ru/api/interpreter",
 ]
 
 
@@ -38,17 +40,29 @@ def _bbox_str(bbox):
     return f"{south},{west},{north},{east}"
 
 
-def _run_overpass_query(query, timeout=90, retries=2):
+def _run_overpass_query(query, timeout=90, retries=3):
     last_err = None
+    headers = {
+        "User-Agent": "AgniNetra-THERMOS-SIH-Prototype/1.0 (student project)",
+        "Accept": "application/json, text/plain, */*",
+    }
     for mirror in OVERPASS_MIRRORS:
         for attempt in range(retries):
             try:
-                resp = requests.post(mirror, data={"data": query}, timeout=timeout)
+                resp = requests.post(mirror, data={"data": query}, headers=headers, timeout=timeout)
                 resp.raise_for_status()
-                return resp.json()
+                result = resp.json()
+                # Overpass sometimes returns HTTP 200 with an embedded error
+                # instead of a proper HTTP error code — catch that here.
+                if "remark" in result and "elements" not in result:
+                    raise RuntimeError(f"Overpass server error: {result['remark']}")
+                print(f"  [Overpass OK via {mirror}, attempt {attempt+1}] "
+                      f"{len(result.get('elements', []))} elements")
+                return result
             except Exception as e:
                 last_err = e
-                time.sleep(2 * (attempt + 1))
+                print(f"  [Overpass failed via {mirror}, attempt {attempt+1}]: {e}")
+                time.sleep(5 * (attempt + 1))
     raise RuntimeError(f"Overpass query failed on all mirrors: {last_err}")
 
 
@@ -104,7 +118,13 @@ def fetch_industrial_facilities(bbox) -> gpd.GeoDataFrame:
             "geometry": Point(lon, lat),
         })
 
-    gdf = gpd.GeoDataFrame(records, geometry="geometry", crs="EPSG:4326")
+    if records:
+        gdf = gpd.GeoDataFrame(records, geometry="geometry", crs="EPSG:4326")
+    else:
+        gdf = gpd.GeoDataFrame(
+            columns=["osm_id", "name", "facility_type", "raw_tags", "geometry"],
+            geometry="geometry", crs="EPSG:4326"
+        )
     return gdf
 
 
@@ -154,5 +174,11 @@ def fetch_landuse_polygons(bbox) -> gpd.GeoDataFrame:
             "geometry": poly,
         })
 
-    gdf = gpd.GeoDataFrame(records, geometry="geometry", crs="EPSG:4326")
+    if records:
+        gdf = gpd.GeoDataFrame(records, geometry="geometry", crs="EPSG:4326")
+    else:
+        gdf = gpd.GeoDataFrame(
+            columns=["osm_id", "land_cover", "geometry"],
+            geometry="geometry", crs="EPSG:4326"
+        )
     return gdf

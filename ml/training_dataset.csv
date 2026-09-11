@@ -1,0 +1,135 @@
+anomaly_id,latitude,longitude,brightness,confidence,detections_30d,persistence_score,first_detected,last_detected,n_detections_total,nearest_industry,nearest_industry_name,distance_m,land_cover,nearest_forest_km,population_proximity,classification
+ANM0001,29.26759,86.29238,344.1,75.1,7,0.54,2026-07-20,2026-09-06,14,none,Facility_0,16719.4,residential,1.79,high,Unknown
+ANM0002,21.27984,84.1268,344.6,73.1,9,0.58,2026-07-10,2026-09-06,15,industrial_zone,Facility_1,543.0,forest,1.01,high,Industrial Fire
+ANM0003,29.2457,86.26971,346.0,89.0,1,0.02,2026-09-06,2026-09-06,1,none,Facility_2,19955.5,unknown,0.3,high,Unknown
+ANM0004,21.02219,90.69932,332.6,43.0,1,0.02,2026-09-05,2026-09-05,1,none,Facility_3,18188.0,industrial,1.69,high,Unknown
+ANM0005,27.61289,85.24665,340.9,71.7,12,0.64,2026-07-12,2026-09-05,21,power_plant,Facility_4,944.4,unknown,10.85,high,Industrial Fire
+ANM0006,24.39688,85.16933,346.9,80.5,7,0.54,2026-07-10,2026-09-05,10,none,Facility_5,17553.4,forest,1.94,low,Wildfire
+ANM0007,14.93025,89.61315,336.2,57.0,1,0.02,2026-09-04,2026-09-04,1,none,Facility_6,6596.3,industrial,1.35,low,Unknown
+ANM0008,24.38142,85.16846,343.2,74.8,3,0.46,2026-07-14,2026-09-04,8,none,Facility_7,19986.6,industrial,7.77,medium,Unknown
+ANM0009,27.86264,82.09102,349.3,66.0,1,0.02,2026-09-04,2026-09-04,1,oil_gas,Facility_8,456.6,unknown,2.59,medium,Unknown
+ANM0010,24.50494,77.6744,348.1,63.7,12,0.64,2026-07-28,2026-09-04,14,industrial_zone,Facility_9,1505.3,residential,7.16,low,Industrial Fire
+ANM0011,26.96457,75.63557,339.5,80.8,7,0.54,2026-07-18,2026-09-03,9,refinery,Facility_10,1813.7,industrial,5.81,unknown,Industrial Fire
+ANM0012,33.101,70.8951,299.3,94.0,1,0.02,2026-09-03,2026-09-03,1,none,Facility_11,18455.5,agricultural,5.81,unknown,Agricultural Burning
+ANM0013,10.93374,74.53015,331.2,78.0,1,0.02,2026-09-02,2026-09-02,1,landfill,Facility_12,394.5,agricultural,1.82,high,Agricultural Burning
+ANM0014,19.11977,79.69728,323.6,53.0,1,0.02,2026-09-02,2026-09-02,1,none,Facility_13,8612.4,industrial,4.27,high,Unknown
+ANM0015,20.94841,80.86951,344.8,79.2,8,0.56,2026-07-11,2026-09-02,16,industrial_zone,Facility_14,2108.0,industrial,14.52,medium,Unknown
+ANM0016,23.70502,87.5339,343.9,77.8,8,0.56,2026-07-11,2026-09-02,17,factory,Facility_15,121.5,forest,6.79,medium,Industrial Fire
+ANM0017,27.73047,82.2977,339.8,82.9,8,0.56,2026-07-12,2026-09-01,12,mine,Facility_16,905.5,unknown,6.11,low,Mining Activity
+ANM0018,27.86934,82.10761,343.6,74.8,4,0.48,2026-07-14,2026-09-01,8,power_plant,Facility_17,1476.0,unknown,3.03,medium,Industrial Fire
+ANM0019,25.5336,94.91892,310.0,90.0,1,0.02,2026-09-01,2026-09-01,1,none,Facility_18,14844.0,forest,5.83,high,Wildfire
+ANM0020,21.70728,88.97951,297.7,58.0,1,0.02,2026-08-30,2026-08-30,1,landfill,Facility_19,2807.7,residential,3.67,medium,Unknown
+ANM0021,23.15302,79.17571,325.5,74.0,1,0.02,2026-08-30,2026-08-30,1,none,Facility_20,5081.4,forest,0.9,low,Wildfire
+ANM0022,28.58676,79.08797,350.6,74.2,7,0.54,2026-07-12,2026-08-30,14,refinery,Facility_21,334.6,water,1.77,high,Industrial Fire
+ANM0023,14.11273,82.59218,311.2,59.0,1,0.02,2026-08-29,2026-08-29,1,none,Facility_22,14088.9,agricultural,0.85,unknown,Agricultural Burning
+ANM0024,10.59457,72.45224,325.3,71.0,1,0.02,2026-08-29,2026-08-29,1,none,Facility_23,17022.2,water,5.47,high,Unknown
+ANM0025,15.64767,84.28319,325.8,67.0,1,0.02,2026-08-28,2026-08-28,1,none,Facility_24,8578.3,mining,0.5,unknown,Unknown
+ANM0026,10.40413,79.4618,295.7,53.0,1,0.02,2026-08-28,2026-08-28,1,oil_gas,Facility_25,2182.9,unknown,0.46,high,Unknown
+ANM0027,29.76432,73.02231,341.8,74.6,5,0.5,2026-07-24,2026-08-28,9,industrial_zone,Facility_26,3760.8,forest,1.08,unknown,Wildfire
+ANM0028,26.98656,75.64929,344.8,63.5,2,0.053,2026-08-26,2026-08-27,2,power_plant,Facility_27,939.4,unknown,2.38,unknown,Unknown
+ANM0029,32.95582,91.82678,307.9,59.0,1,0.02,2026-08-27,2026-08-27,1,oil_gas,Facility_28,195.6,agricultural,0.88,unknown,Agricultural Burning
+ANM0030,24.36941,85.17085,337.1,54.0,1,0.02,2026-08-26,2026-08-26,1,none,Facility_29,16581.6,forest,6.56,unknown,Wildfire
+ANM0031,32.63973,74.15227,288.3,93.0,1,0.02,2026-08-26,2026-08-26,1,none,Facility_30,15471.8,residential,3.87,low,Unknown
+ANM0032,17.25156,69.1304,301.6,83.0,1,0.02,2026-08-25,2026-08-25,1,none,Facility_31,17569.7,agricultural,25.57,low,Agricultural Burning
+ANM0033,17.3053,84.15305,328.3,54.0,1,0.02,2026-08-25,2026-08-25,1,refinery,Facility_32,1266.8,unknown,17.07,low,Unknown
+ANM0034,28.10365,81.13323,338.6,73.0,1,0.02,2026-08-25,2026-08-25,1,refinery,Facility_33,2028.0,unknown,3.59,high,Unknown
+ANM0035,25.50674,80.18645,303.8,74.0,1,0.02,2026-08-25,2026-08-25,1,industrial_zone,Facility_34,2330.5,agricultural,3.18,low,Agricultural Burning
+ANM0036,30.3409,85.21023,308.8,70.0,1,0.02,2026-08-24,2026-08-24,1,oil_gas,Facility_35,1649.3,unknown,0.6,low,Unknown
+ANM0037,15.90005,91.3126,304.5,73.0,1,0.02,2026-08-24,2026-08-24,1,oil_gas,Facility_36,4340.5,agricultural,8.24,unknown,Agricultural Burning
+ANM0038,28.5196,84.6712,326.9,62.0,1,0.02,2026-08-22,2026-08-22,1,industrial_zone,Facility_37,5472.7,industrial,17.63,medium,Unknown
+ANM0039,12.44441,69.30241,301.6,73.0,1,0.02,2026-08-22,2026-08-22,1,factory,Facility_38,2007.6,agricultural,3.29,medium,Agricultural Burning
+ANM0040,28.14384,93.68545,301.3,78.0,1,0.02,2026-08-22,2026-08-22,1,none,Facility_39,7328.2,unknown,7.9,low,Unknown
+ANM0041,20.94613,80.89412,338.2,62.0,1,0.02,2026-08-21,2026-08-21,1,industrial_zone,Facility_40,822.7,forest,0.1,medium,Unknown
+ANM0042,29.78257,73.02664,341.3,82.0,1,0.02,2026-08-21,2026-08-21,1,none,Facility_41,7895.6,forest,36.94,high,Wildfire
+ANM0043,27.12098,85.70514,334.1,74.0,1,0.02,2026-08-20,2026-08-20,1,none,Facility_42,9061.4,industrial,0.53,medium,Unknown
+ANM0044,31.7145,77.33899,347.0,48.0,1,0.02,2026-08-20,2026-08-20,1,factory,Facility_43,3935.5,unknown,7.56,medium,Unknown
+ANM0045,32.54438,95.0312,332.4,100.0,1,0.02,2026-08-20,2026-08-20,1,none,Facility_44,19703.1,unknown,0.27,medium,Unknown
+ANM0046,33.47132,71.68112,325.5,31.0,1,0.02,2026-08-19,2026-08-19,1,none,Facility_45,14173.2,mining,1.72,medium,Unknown
+ANM0047,22.69065,93.69077,298.8,95.0,1,0.02,2026-08-19,2026-08-19,1,refinery,Facility_46,1547.3,unknown,2.01,medium,Unknown
+ANM0048,13.30374,76.99939,329.6,76.0,1,0.02,2026-08-18,2026-08-18,1,factory,Facility_47,911.5,unknown,5.29,medium,Unknown
+ANM0049,18.07264,84.38726,322.5,87.0,1,0.02,2026-08-18,2026-08-18,1,none,Facility_48,5635.3,industrial,0.33,medium,Unknown
+ANM0050,27.89243,82.11514,339.3,75.0,1,0.02,2026-08-18,2026-08-18,1,oil_gas,Facility_49,6282.8,agricultural,2.25,low,Agricultural Burning
+ANM0051,10.74822,70.48117,323.9,88.0,1,0.02,2026-08-18,2026-08-18,1,oil_gas,Facility_50,1215.6,unknown,1.21,medium,Unknown
+ANM0052,30.65769,72.01154,317.0,78.0,1,0.02,2026-08-17,2026-08-17,1,power_plant,Facility_51,488.2,water,0.61,unknown,Unknown
+ANM0053,12.25524,71.0018,319.4,72.0,1,0.02,2026-08-17,2026-08-17,1,none,Facility_52,6375.8,agricultural,8.42,unknown,Agricultural Burning
+ANM0054,26.34517,74.97373,329.7,59.0,1,0.02,2026-08-17,2026-08-17,1,none,Facility_53,7753.0,forest,2.41,medium,Wildfire
+ANM0055,29.74305,73.03316,362.9,47.0,1,0.02,2026-08-16,2026-08-16,1,none,Facility_54,19700.4,mining,0.49,medium,Unknown
+ANM0056,29.27423,86.31705,343.3,100.0,1,0.02,2026-08-16,2026-08-16,1,none,Facility_55,11878.4,agricultural,2.87,low,Agricultural Burning
+ANM0057,34.87754,90.39104,311.6,73.0,1,0.02,2026-08-16,2026-08-16,1,industrial_zone,Facility_56,1260.6,unknown,0.98,unknown,Unknown
+ANM0058,23.29336,83.97635,356.9,73.0,1,0.02,2026-08-15,2026-08-15,1,mine,Facility_57,2277.4,agricultural,0.01,low,Mining Activity
+ANM0059,26.98356,75.62377,343.4,91.0,3,0.353,2026-07-24,2026-08-15,4,oil_gas,Facility_58,1063.3,forest,0.55,unknown,Gas Flare
+ANM0060,24.47646,77.65475,356.4,70.0,1,0.02,2026-08-14,2026-08-14,1,power_plant,Facility_59,2235.2,unknown,5.98,low,Unknown
+ANM0061,26.96035,75.6211,349.5,84.0,1,0.02,2026-08-13,2026-08-13,1,none,Facility_60,19190.4,forest,0.01,low,Wildfire
+ANM0062,20.92854,80.88217,342.4,76.3,1,0.327,2026-07-21,2026-08-13,3,industrial_zone,Facility_61,1583.7,forest,2.39,medium,Industrial Fire
+ANM0063,27.7502,82.29206,367.5,50.0,1,0.02,2026-08-12,2026-08-12,1,mine,Facility_62,2933.8,residential,3.5,low,Mining Activity
+ANM0064,16.18646,80.75446,343.4,81.0,1,0.02,2026-08-11,2026-08-11,1,none,Facility_63,15496.6,unknown,1.49,medium,Unknown
+ANM0065,28.19573,91.63712,302.3,82.0,1,0.02,2026-08-11,2026-08-11,1,landfill,Facility_64,857.1,forest,4.02,low,Unknown
+ANM0066,34.93702,72.65129,295.1,72.0,1,0.02,2026-08-11,2026-08-11,1,mine,Facility_65,5217.8,agricultural,9.14,unknown,Mining Activity
+ANM0067,12.1466,90.52397,322.1,65.0,1,0.02,2026-08-09,2026-08-09,1,mine,Facility_66,218.1,unknown,3.13,high,Mining Activity
+ANM0068,17.25327,73.13983,331.0,70.0,1,0.02,2026-08-09,2026-08-09,1,factory,Facility_67,1412.8,unknown,2.94,low,Unknown
+ANM0069,28.1325,77.89998,309.8,95.0,1,0.02,2026-08-09,2026-08-09,1,power_plant,Facility_68,1103.8,industrial,0.76,high,Unknown
+ANM0070,24.40907,85.15496,344.8,67.5,1,0.42,2026-07-09,2026-08-09,2,industrial_zone,Facility_69,1344.3,forest,3.16,low,Industrial Fire
+ANM0071,29.41156,85.97172,312.3,84.0,1,0.02,2026-08-09,2026-08-09,1,factory,Facility_70,2820.5,forest,11.6,high,Wildfire
+ANM0072,27.73516,82.27229,335.0,96.0,1,0.02,2026-08-07,2026-08-07,1,industrial_zone,Facility_71,790.8,agricultural,2.92,unknown,Agricultural Burning
+ANM0073,26.13355,74.89209,283.8,70.0,0,0.0,2026-08-06,2026-08-06,1,none,Facility_72,9171.1,forest,3.64,high,Wildfire
+ANM0074,31.70575,91.56273,316.1,75.0,0,0.0,2026-08-06,2026-08-06,1,factory,Facility_73,1241.1,water,14.38,unknown,Unknown
+ANM0075,23.53296,70.70017,326.8,52.0,0,0.0,2026-08-06,2026-08-06,1,power_plant,Facility_74,2242.9,forest,2.0,unknown,Wildfire
+ANM0076,27.61018,85.22017,340.6,93.0,0,0.0,2026-08-05,2026-08-05,1,factory,Facility_75,1384.1,industrial,0.23,low,Unknown
+ANM0077,32.36723,92.04354,320.5,61.0,0,0.0,2026-08-05,2026-08-05,1,factory,Facility_76,1155.6,water,10.5,low,Unknown
+ANM0078,13.25525,81.53491,325.5,62.0,0,0.0,2026-08-05,2026-08-05,1,none,Facility_77,11177.2,residential,3.46,low,Unknown
+ANM0079,9.58891,85.33782,334.0,62.0,0,0.0,2026-08-04,2026-08-04,1,mine,Facility_78,86.6,forest,0.71,unknown,Mining Activity
+ANM0080,28.56338,79.09272,343.7,83.0,0,0.0,2026-08-04,2026-08-04,1,none,Facility_79,8264.4,unknown,0.44,medium,Unknown
+ANM0081,24.50142,77.65144,337.8,75.0,0,0.0,2026-08-04,2026-08-04,1,none,Facility_80,13824.6,mining,3.34,low,Unknown
+ANM0082,29.92914,92.96127,336.2,60.0,0,0.0,2026-08-04,2026-08-04,1,industrial_zone,Facility_81,4189.9,mining,7.85,high,Unknown
+ANM0083,22.09346,94.38413,326.6,94.0,0,0.0,2026-08-02,2026-08-02,1,none,Facility_82,5540.9,forest,0.16,low,Wildfire
+ANM0084,23.70608,87.51062,343.5,97.0,0,0.0,2026-08-02,2026-08-02,1,oil_gas,Facility_83,2373.8,forest,0.36,high,Wildfire
+ANM0085,21.33972,76.70789,347.1,68.0,0,0.0,2026-08-02,2026-08-02,1,power_plant,Facility_84,768.8,unknown,0.56,low,Unknown
+ANM0086,24.26903,88.14145,339.6,69.0,0,0.0,2026-08-01,2026-08-01,1,power_plant,Facility_85,1001.3,agricultural,0.85,low,Agricultural Burning
+ANM0087,21.27894,83.33107,303.2,60.0,0,0.0,2026-07-31,2026-07-31,1,none,Facility_86,13586.9,agricultural,4.99,medium,Agricultural Burning
+ANM0088,10.71068,75.67165,303.9,92.0,0,0.0,2026-07-31,2026-07-31,1,industrial_zone,Facility_87,3605.4,industrial,0.28,low,Unknown
+ANM0089,20.54635,78.66923,290.0,90.0,0,0.0,2026-07-31,2026-07-31,1,oil_gas,Facility_88,1813.3,water,9.54,low,Unknown
+ANM0090,22.35355,81.80788,313.2,40.0,0,0.0,2026-07-30,2026-07-30,1,industrial_zone,Facility_89,4171.4,unknown,12.59,low,Unknown
+ANM0091,27.73472,82.32427,345.0,74.0,0,0.0,2026-07-30,2026-07-30,1,oil_gas,Facility_90,3684.6,agricultural,24.98,medium,Agricultural Burning
+ANM0092,18.09589,80.93492,308.5,85.0,0,0.0,2026-07-29,2026-07-29,1,none,Facility_91,9743.2,unknown,0.05,low,Unknown
+ANM0093,25.32177,90.91705,307.0,66.0,0,0.0,2026-07-29,2026-07-29,1,industrial_zone,Facility_92,2697.3,forest,1.08,unknown,Wildfire
+ANM0094,24.03342,71.65476,323.0,73.0,0,0.0,2026-07-28,2026-07-28,1,refinery,Facility_93,269.0,residential,3.67,high,Unknown
+ANM0095,30.38706,76.03875,314.0,89.0,0,0.0,2026-07-28,2026-07-28,1,factory,Facility_94,164.6,residential,0.35,high,Unknown
+ANM0096,27.8508,82.10002,339.1,84.5,0,0.187,2026-07-13,2026-07-27,4,landfill,Facility_95,1754.7,forest,20.57,high,Unknown
+ANM0097,34.80581,77.90461,324.1,74.0,0,0.0,2026-07-26,2026-07-26,1,refinery,Facility_96,963.0,forest,16.78,low,Unknown
+ANM0098,30.61836,76.24752,328.5,63.0,0,0.0,2026-07-25,2026-07-25,1,power_plant,Facility_97,2413.3,industrial,3.42,medium,Unknown
+ANM0099,32.11452,86.92445,335.7,81.0,0,0.0,2026-07-25,2026-07-25,1,power_plant,Facility_98,4956.2,unknown,9.99,low,Unknown
+ANM0100,11.19892,92.66548,316.9,94.0,0,0.0,2026-07-25,2026-07-25,1,none,Facility_99,18296.0,residential,10.36,low,Unknown
+ANM0101,11.68991,79.41026,315.9,68.0,0,0.0,2026-07-24,2026-07-24,1,none,Facility_100,18815.9,unknown,3.78,medium,Unknown
+ANM0102,29.27222,86.2633,345.1,57.5,0,0.147,2026-07-12,2026-07-23,2,none,Facility_101,12554.5,unknown,2.44,unknown,Unknown
+ANM0103,21.2965,69.77782,329.7,90.0,0,0.0,2026-07-22,2026-07-22,1,factory,Facility_102,396.7,industrial,10.03,low,Unknown
+ANM0104,17.11222,85.7178,335.9,76.0,0,0.0,2026-07-22,2026-07-22,1,none,Facility_103,16998.1,unknown,2.99,medium,Unknown
+ANM0105,27.76077,82.30419,330.1,100.0,0,0.0,2026-07-21,2026-07-21,1,none,Facility_104,9716.8,forest,12.41,medium,Wildfire
+ANM0106,32.09862,91.36741,287.2,98.0,0,0.0,2026-07-21,2026-07-21,1,none,Facility_105,17560.7,forest,5.05,medium,Wildfire
+ANM0107,34.75186,94.92726,318.6,76.0,0,0.0,2026-07-21,2026-07-21,1,industrial_zone,Facility_106,1539.0,unknown,3.42,high,Unknown
+ANM0108,24.48005,77.68275,335.5,63.0,0,0.0,2026-07-21,2026-07-21,1,factory,Facility_107,196.0,unknown,2.5,high,Unknown
+ANM0109,12.72988,78.3728,299.4,58.0,0,0.0,2026-07-20,2026-07-20,1,power_plant,Facility_108,3950.2,agricultural,1.71,unknown,Agricultural Burning
+ANM0110,8.8527,72.18056,350.3,43.0,0,0.0,2026-07-20,2026-07-20,1,none,Facility_109,17629.9,industrial,1.1,medium,Unknown
+ANM0111,27.63369,85.22642,355.1,89.0,0,0.0,2026-07-20,2026-07-20,1,industrial_zone,Facility_110,3645.3,residential,0.05,medium,Unknown
+ANM0112,24.45459,72.99295,310.2,75.0,0,0.0,2026-07-20,2026-07-20,1,factory,Facility_111,299.3,unknown,1.55,low,Unknown
+ANM0113,20.9645,80.87976,356.8,93.0,0,0.0,2026-07-19,2026-07-19,1,factory,Facility_112,2154.8,residential,0.09,low,Unknown
+ANM0114,27.95501,81.49116,311.9,89.0,0,0.0,2026-07-19,2026-07-19,1,mine,Facility_113,680.5,industrial,1.25,unknown,Mining Activity
+ANM0115,29.71774,81.55407,311.1,72.0,0,0.0,2026-07-18,2026-07-18,1,oil_gas,Facility_114,4618.2,agricultural,16.53,low,Agricultural Burning
+ANM0116,10.64285,76.00179,325.9,75.0,0,0.0,2026-07-17,2026-07-17,1,none,Facility_115,16140.4,industrial,12.37,medium,Unknown
+ANM0117,20.92472,80.8572,348.9,64.0,0,0.0,2026-07-15,2026-07-15,1,none,Facility_116,5220.2,water,12.02,medium,Unknown
+ANM0118,34.79067,89.87647,306.1,73.0,0,0.0,2026-07-15,2026-07-15,1,none,Facility_117,17407.6,unknown,2.0,unknown,Unknown
+ANM0119,10.92432,71.6789,318.3,89.0,0,0.0,2026-07-15,2026-07-15,1,industrial_zone,Facility_118,1015.1,industrial,14.92,low,Unknown
+ANM0120,27.96465,91.22528,323.6,65.0,0,0.0,2026-07-14,2026-07-14,1,landfill,Facility_119,2140.6,agricultural,5.75,unknown,Agricultural Burning
+ANM0121,29.74801,73.01345,340.8,84.5,0,0.067,2026-07-09,2026-07-14,2,mine,Facility_120,1644.5,agricultural,0.22,high,Mining Activity
+ANM0122,9.8803,72.00193,326.5,51.0,0,0.0,2026-07-13,2026-07-13,1,landfill,Facility_121,71.0,mining,1.31,unknown,Unknown
+ANM0123,16.32841,94.94803,292.9,70.0,0,0.0,2026-07-13,2026-07-13,1,power_plant,Facility_122,103.8,unknown,5.41,low,Unknown
+ANM0124,11.7047,86.95265,330.5,57.0,0,0.0,2026-07-13,2026-07-13,1,industrial_zone,Facility_123,968.6,forest,0.89,high,Unknown
+ANM0125,20.47069,72.67688,320.2,73.0,0,0.0,2026-07-12,2026-07-12,1,power_plant,Facility_124,2310.0,forest,0.59,low,Wildfire
+ANM0126,25.30553,87.60455,301.6,73.0,0,0.0,2026-07-11,2026-07-11,1,industrial_zone,Facility_125,1450.9,residential,7.15,low,Unknown
+ANM0127,10.28132,95.14225,319.0,59.0,0,0.0,2026-07-11,2026-07-11,1,refinery,Facility_126,350.8,forest,0.03,high,Unknown
+ANM0128,34.48713,69.22804,310.0,58.0,0,0.0,2026-07-11,2026-07-11,1,oil_gas,Facility_127,2484.9,unknown,0.18,medium,Unknown
+ANM0129,15.78216,89.27885,295.2,78.0,0,0.0,2026-07-10,2026-07-10,1,power_plant,Facility_128,5109.1,agricultural,9.75,unknown,Agricultural Burning
+ANM0130,32.89123,77.63273,329.1,100.0,0,0.0,2026-07-10,2026-07-10,1,mine,Facility_129,665.7,forest,1.75,medium,Mining Activity
+ANM0131,11.63291,83.54597,322.3,69.0,0,0.0,2026-07-10,2026-07-10,1,oil_gas,Facility_130,1025.6,unknown,13.45,medium,Unknown
+ANM0132,34.12501,92.30596,314.7,73.0,0,0.0,2026-07-10,2026-07-10,1,none,Facility_131,14613.3,forest,7.69,medium,Wildfire
+ANM0133,33.73098,70.08284,324.3,62.0,0,0.0,2026-07-09,2026-07-09,1,mine,Facility_132,571.0,agricultural,5.75,medium,Mining Activity
+ANM0134,27.74089,82.28331,351.9,65.0,0,0.0,2026-07-09,2026-07-09,1,refinery,Facility_133,688.1,forest,2.14,unknown,Unknown
