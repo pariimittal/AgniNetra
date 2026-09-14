@@ -1,0 +1,21 @@
+# AgniNetra backend — Phase 2 (foundation) dependencies.
+#
+# Install from the repository root with:
+#   pip install -r backend/requirements.txt
+#
+# Kept minimal for this phase (FastAPI app + health check + tests only).
+# Data-science dependencies used by ml/ and geospatial/ (pandas, scikit-learn,
+# geopandas, etc.) are intentionally NOT duplicated here — they belong to
+# ml/README.md and geospatial/requirements.txt respectively. A future phase
+# that wires backend/ml_integration/ to the real ml/ package should either
+# reference those requirements files directly or consolidate them; do not
+# fork separate pins for the same libraries.
+
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# Testing
+pytest==8.3.4
+httpx==0.28.1
