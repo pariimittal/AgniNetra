@@ -405,7 +405,6 @@ function CommandCenterPage() {
     getFacilities().then((data) => {
       if (mounted) setLiveFacilities(data)
     })
-
     return () => {
       mounted = false
     }
@@ -656,8 +655,7 @@ function ThermalEventsPage() {
           <select value={filters.risk} onChange={(event) => setFilters((prev) => ({ ...prev, risk: event.target.value }))} className="rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"><option value="ALL">All risk</option><option value="LOW">Low</option><option value="MODERATE">Moderate</option><option value="HIGH">High</option><option value="CRITICAL">Critical</option></select>
           <select value={filters.thermal} onChange={(event) => setFilters((prev) => ({ ...prev, thermal: event.target.value }))} className="rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"><option value="ALL">All thermal</option><option value="NORMAL">Normal</option><option value="MILDLY_ABNORMAL">Mildly Abnormal</option><option value="ABNORMAL">Abnormal</option></select>
           <select value={filters.classification} onChange={(event) => setFilters((prev) => ({ ...prev, classification: event.target.value }))} className="rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"><option value="ALL">All classifications</option><option value="Industrial Fire">Industrial Fire</option><option value="Gas Flare / Persistent Source">Gas Flare</option><option value="Wildfire">Wildfire</option><option value="Agricultural Burning">Agricultural Burning</option><option value="Mining Activity">Mining Activity</option><option value="Unknown">Unknown</option></select>
-          <select value={filters.facility} onChange={(event) => setFilters((prev) => ({ ...prev, facility: event.target.value }))} className="rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"><option value="ALL">All facilities</option>{liveFacilities.map((facility) => <option key={facility.id} value={facility.id}>{facility.name}</option>)}</select>
-          <label className="flex items-center gap-2 rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200"><input type="checkbox" checked={filters.abnormalOnly} onChange={(event) => setFilters((prev) => ({ ...prev, abnormalOnly: event.target.checked }))} /> Abnormal only</label>
+          <select value={filters.facility} onChange={(event) => setFilters((prev) => ({ ...prev, facility: event.target.value }))} className="rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"><option value="ALL">All facilities</option>{liveFacilities.map((facility) => <option key={facility.id} value={facility.id}>{facility.name}</option>)}</select>          <label className="flex items-center gap-2 rounded border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-200"><input type="checkbox" checked={filters.abnormalOnly} onChange={(event) => setFilters((prev) => ({ ...prev, abnormalOnly: event.target.checked }))} /> Abnormal only</label>
         </div>
         <div className="mt-4"><button className="rounded border border-slate-700 px-3 py-2 text-xs uppercase tracking-[0.18em] text-slate-300" onClick={() => setFilters({ risk: 'ALL', thermal: 'ALL', classification: 'ALL', facility: 'ALL', abnormalOnly: false, search: '' })}>Reset Filters</button></div>
       </div>
@@ -1045,29 +1043,29 @@ function DeviationPage() {
       <SectionHeader eyebrow="03" title="Deviation Engine" description="Normal is facility-specific and context-aware." />
       <FeatureMeta role="Compare current behavior against learned normal" input="Baseline + current event + context" output="Normal, mildly abnormal or abnormal" />
       <WorkspaceSection eyebrow="Expected versus observed" title="Deviation is a structured comparison, not a single guess">
-      <div className="rounded border border-slate-800 bg-[#0d1218] p-5">
-        <div className="grid gap-5 lg:grid-cols-3">
-          <div className="rounded border border-slate-800 bg-slate-950/80 p-4">
-            <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Facility Baseline</div>
-            <div className="mt-3 text-3xl text-slate-100">342 K</div>
-            <div className="mt-2 text-sm text-slate-300">Normal location</div>
-            <div className="mt-2 text-sm text-slate-300">20:00–23:00</div>
-            <div className="mt-2 text-sm text-slate-300">Typical persistence</div>
-          </div>
-          <div className="rounded border border-slate-800 bg-slate-950/80 p-4">
-            <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Current Observation</div>
-            <div className="mt-3 text-3xl text-slate-100">388 K</div>
-            <div className="mt-2 text-sm text-slate-300">New location</div>
-            <div className="mt-2 text-sm text-slate-300">01:40</div>
-            <div className="mt-2 text-sm text-slate-300">High persistence</div>
-          </div>
-          <div className="rounded border border-slate-800 bg-slate-950/80 p-4">
-            <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Comparison</div>
-            <div className="mt-6 text-center text-3xl font-semibold text-slate-100">VS</div>
-            <div className="mt-3 text-center text-sm text-slate-300">Deviation result</div>
+        <div className="rounded border border-slate-800 bg-[#0d1218] p-5">
+          <div className="grid gap-5 lg:grid-cols-3">
+            <div className="rounded border border-slate-800 bg-slate-950/80 p-4">
+              <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Facility Baseline</div>
+              <div className="mt-3 text-3xl text-slate-100">342 K</div>
+              <div className="mt-2 text-sm text-slate-300">Normal location</div>
+              <div className="mt-2 text-sm text-slate-300">20:00–23:00</div>
+              <div className="mt-2 text-sm text-slate-300">Typical persistence</div>
+            </div>
+            <div className="rounded border border-slate-800 bg-slate-950/80 p-4">
+              <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Current Observation</div>
+              <div className="mt-3 text-3xl text-slate-100">388 K</div>
+              <div className="mt-2 text-sm text-slate-300">New location</div>
+              <div className="mt-2 text-sm text-slate-300">01:40</div>
+              <div className="mt-2 text-sm text-slate-300">High persistence</div>
+            </div>
+            <div className="rounded border border-slate-800 bg-slate-950/80 p-4">
+              <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Comparison</div>
+              <div className="mt-6 text-center text-3xl font-semibold text-slate-100">VS</div>
+              <div className="mt-3 text-center text-sm text-slate-300">Deviation result</div>
+            </div>
           </div>
         </div>
-      </div>
       </WorkspaceSection>
       <WorkspaceSection eyebrow="Interactive decomposition" title="Select a dimension to inspect its evidence"><div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">{metrics.map((metric) => <button key={metric.label} onClick={() => setSelected(metric.label)} className={`deviation-module ${selected === metric.label ? 'active' : ''}`}><div className="eyebrow">{metric.label}</div><div className="mt-3 text-3xl font-semibold text-slate-100">{metric.value}</div><SignalBar label="" value={metric.value} color={metric.value > 90 ? 'red' : 'amber'} /><div className="mt-3 text-left text-xs text-slate-400">{metric.detail}</div></button>)}</div><div className="mt-4 tech-panel rounded border border-slate-800 p-4"><div className="eyebrow">Selected dimension / {selected}</div><div className="mt-2 text-sm text-slate-300">{metrics.find((metric) => metric.label === selected)?.detail}</div></div></WorkspaceSection>
       <div className="analytics-panel rounded border border-slate-800 bg-[#0d1218] p-5">
@@ -1117,10 +1115,10 @@ function RiskPage() {
         <div className="mt-4 flex justify-center"><RiskMeter score={score} level="CRITICAL" /></div>
       </div>
       <WorkspaceSection eyebrow="Risk decomposition" title="Every contributor remains visible"><div className="tech-panel rounded border border-slate-800 p-5"><div className="space-y-4">
-          {Object.entries(drivers).map(([label, value]) => (
-            <SignalBar key={label} label={label} value={value} color={value > 90 ? 'red' : value > 70 ? 'amber' : 'cyan'} detail="Contribution to explainable index" />
-          ))}
-        </div></div></WorkspaceSection>
+        {Object.entries(drivers).map(([label, value]) => (
+          <SignalBar key={label} label={label} value={value} color={value > 90 ? 'red' : value > 70 ? 'amber' : 'cyan'} detail="Contribution to explainable index" />
+        ))}
+      </div></div></WorkspaceSection>
       <div className="grid gap-5 lg:grid-cols-2">
         <div className="analytics-panel rounded border border-slate-800 bg-[#0d1218] p-5">
           <div className="text-[10px] uppercase tracking-[0.22em] text-slate-500">Why this is critical</div>
